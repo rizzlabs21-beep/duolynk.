@@ -1,0 +1,254 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DUOLYNK design system — warm cream, coral, indigo, lavender, gold.
+   All colors are HSL per shadcn/ui convention. */
+
+@layer base {
+  :root {
+    --radius: 1.25rem;
+
+    --background: 31 100% 95%;
+    --foreground: 244 38% 27%;
+
+    --card: 38 100% 98%;
+    --card-foreground: 244 38% 27%;
+
+    --popover: 38 100% 98%;
+    --popover-foreground: 244 38% 27%;
+
+    --primary: 0 100% 71%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 250 100% 83%;
+    --secondary-foreground: 244 38% 27%;
+
+    --muted: 32 100% 97%;
+    --muted-foreground: 254 13% 44%;
+
+    --accent: 40 100% 67%;
+    --accent-foreground: 244 38% 27%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 53% 87%;
+    --input: 30 53% 87%;
+    --ring: 0 100% 71%;
+
+    --chart-1: 0 100% 71%;
+    --chart-2: 250 100% 83%;
+    --chart-3: 40 100% 67%;
+    --chart-4: 244 38% 27%;
+    --chart-5: 340 70% 75%;
+
+    --sidebar-background: 38 100% 98%;
+    --sidebar-foreground: 244 38% 27%;
+    --sidebar-primary: 0 100% 71%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 31 100% 95%;
+    --sidebar-accent-foreground: 244 38% 27%;
+    --sidebar-border: 30 53% 87%;
+    --sidebar-ring: 0 100% 71%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(0 100% 71%) 0%, hsl(8 100% 74%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(38 100% 99%) 0%, hsl(38 100% 98%) 100%);
+    --gradient-background: linear-gradient(180deg, hsl(31 100% 95%) 0%, hsl(33 100% 96%) 100%);
+
+    --shadow-card: 0 18px 40px -24px hsl(244 38% 27% / 0.28), 0 2px 8px -4px hsl(244 38% 27% / 0.08);
+    --shadow-hover: 0 26px 56px -26px hsl(244 38% 27% / 0.34), 0 4px 12px -6px hsl(244 38% 27% / 0.1);
+    --shadow-glow: 0 16px 32px -14px hsl(0 100% 71% / 0.55);
+  }
+
+  .dark {
+    --background: 244 30% 12%;
+    --foreground: 31 100% 95%;
+
+    --card: 244 28% 16%;
+    --card-foreground: 31 100% 95%;
+
+    --popover: 244 28% 16%;
+    --popover-foreground: 31 100% 95%;
+
+    --primary: 0 90% 68%;
+    --primary-foreground: 244 38% 12%;
+
+    --secondary: 250 55% 70%;
+    --secondary-foreground: 244 38% 12%;
+
+    --muted: 244 24% 20%;
+    --muted-foreground: 250 15% 72%;
+
+    --accent: 40 90% 65%;
+    --accent-foreground: 244 38% 12%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 244 22% 26%;
+    --input: 244 22% 26%;
+    --ring: 0 90% 68%;
+
+    --chart-1: 0 90% 68%;
+    --chart-2: 250 55% 70%;
+    --chart-3: 40 90% 65%;
+    --chart-4: 31 100% 95%;
+    --chart-5: 340 60% 70%;
+
+    --sidebar-background: 244 28% 14%;
+    --sidebar-foreground: 31 100% 95%;
+    --sidebar-primary: 0 90% 68%;
+    --sidebar-primary-foreground: 244 38% 12%;
+    --sidebar-accent: 244 24% 20%;
+    --sidebar-accent-foreground: 31 100% 95%;
+    --sidebar-border: 244 22% 26%;
+    --sidebar-ring: 0 90% 68%;
+
+    --shadow-card: 0 18px 40px -28px hsl(0 0% 0% / 0.6);
+    --shadow-hover: 0 24px 48px -28px hsl(0 0% 0% / 0.7);
+    --shadow-glow: 0 16px 32px -18px hsl(0 90% 68% / 0.5);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Nunito Sans', ui-rounded, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-feature-settings: 'ss01' on;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Baloo 2', 'Nunito Sans', ui-rounded, system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Baloo 2', 'Nunito Sans', ui-rounded, system-ui, sans-serif;
+  }
+
+  /* The supplied logo artwork sits on its own cream plate; darken blending
+     keeps every artwork colour exact while the plate melts into the page. */
+  .logo-blend {
+    mix-blend-mode: darken;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-gradient-coral {
+    background-image: linear-gradient(100deg, hsl(0 100% 71%) 0%, hsl(8 100% 72%) 60%, hsl(20 100% 70%) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .surface-grain {
+    background-image: radial-gradient(hsl(244 38% 27% / 0.045) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+@keyframes duolynk-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes duolynk-pulse-soft {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.06);
+  }
+}
+
+.animate-float {
+  animation: duolynk-float 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: duolynk-pulse-soft 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-pulse-soft {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@layer utilities {
+  .game-glow {
+    box-shadow: 0 18px 40px -18px hsl(var(--game-accent) / 0.55);
+  }
+  .game-ring {
+    box-shadow: 0 0 0 2px hsl(var(--game-accent) / 0.35);
+  }
+  .game-soft {
+    background-color: hsl(var(--game-accent) / 0.12);
+  }
+  .game-text {
+    color: hsl(var(--game-accent));
+  }
+  .game-border {
+    border-color: hsl(var(--game-accent) / 0.35);
+  }
+  .game-gradient {
+    background-image: linear-gradient(135deg, hsl(var(--game-accent)) 0%, hsl(var(--game-accent) / 0.72) 100%);
+  }
+}
+
+@keyframes spark-float {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-8px) rotate(7deg); }
+}
+.spark-float { animation: spark-float 3.3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .spark-float { animation: none; }
+}

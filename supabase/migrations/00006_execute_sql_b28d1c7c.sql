@@ -1,0 +1,1 @@
+ALTER PUBLICATION supabase_realtime DROP FOR TABLE TABLE public.messages; DROP TABLE public.messages;
